@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Card Hover Animation | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <div class="card">
+        <div class="image">
+          <img src="profile.jpg">
+        </div>
+        <div class="content">
+          <div class="title">Card Hover Animation</div>
+          <div class="sub-title">HTML and CSS (Animation)</div>
+          <div class="bottom">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quibusdam dicta aspernatur alias necessitatibus perspiciatis earum! Beatae facere dolores et!</p>
+            <button>Read More</button>
+          </div>
+        </div>
+    </div>
+
+    <script>
+      $('.card').hover(function(){
+        if($(this).hasClass("active")){
+          $('.card .bottom').slideUp(function(){
+            $('.card').removeClass("active");
+          });
+        }else{
+          $('.card').addClass("active");
+          $('.card .bottom').stop().slideDown();
+        }
+      });
+    </script>
+
+  </body>
+</html>
